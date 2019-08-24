@@ -105,10 +105,10 @@ if(bp==b3) {
 if(bp==b4) {
 	 
 	String f =	JOptionPane.showInputDialog("What do you want to call the file");
-
+	String shi = f+".txt";
 		
 		try {
-			fw = new FileWriter("src/_03_To_Do_List/"+fn+".txt");
+			fw = new FileWriter("src/_03_To_Do_List/"+shi);
 		} catch (IOException e1) {
 			// TODO Auto-generated catch block
 			System.out.println("error");
@@ -117,7 +117,8 @@ if(bp==b4) {
 		
 		for (int i = 0; i < as.size(); i++) {
 			try {
-				fw.write(as.get(i));
+				
+				fw.write(as.get(i)+"\n");
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
@@ -137,8 +138,9 @@ if(bp==b5) {
 	BufferedReader br = null;
 	ArrayList<String> nas = new ArrayList<String>();
 	try {
-		JOptionPane.showInputDialog("Where do you want to load the list from");
-		 br = new BufferedReader(new FileReader("src/_03_To_Do_List/"+fn+".txt"));
+		String hi =JOptionPane.showInputDialog("Where do you want to load the list from");
+		String shi = hi+".txt";
+		 br = new BufferedReader(new FileReader("src/_03_To_Do_List/"+shi));
 	} catch (FileNotFoundException e1) {
 		// TODO Auto-generated catch block
 		e1.printStackTrace();
